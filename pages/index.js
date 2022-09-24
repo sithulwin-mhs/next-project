@@ -1,13 +1,28 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import React from 'react'
+import Link from 'next/link'
+const Home = () => {
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <h1 className="text-center mt-8">
-      Hello world!
-    </h1>
-    </div>
-  )
+	// This is the home page which will
+	// contain links to all other pages
+	return (
+		<>
+			<h1>Hello Geeks</h1>
+			<ul>
+				<li>
+					getStaticProps :
+					<Link href={'/albums'}>Albums Page</Link>
+				</li>
+				<li>
+					getStaticPaths :
+					<Link href={'/users/1'}>User 1</Link>
+				</li>
+				<li>
+					getServerSideProps :
+					<Link href={'/posts'}>Posts Page</Link>
+				</li>
+			</ul>
+		</>
+	)
 }
+
+export default Home
